@@ -8,7 +8,7 @@ const router = Router();
 router.get('/', async (req, res, next) => {
    
     try {
-        const [allUsers] = await db.users.all()
+        const allUsers = await db.users.all()
         res.json(allUsers);
         
     } catch (error) {

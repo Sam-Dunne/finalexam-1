@@ -35,15 +35,22 @@ export interface IPayload extends IUsers {
 }
 
 import {Request} from 'express';
-
+// use for localstrategy in login
 export interface IReqUser extends Request {
     user?: IPayload;
 }
-
+//use for JWT
 export interface IReqPayload extends Request {
     user?: {
         userid?: number;
         email?: string;
         role?: string;
     }
+}
+
+export interface MySQLResponse {
+    affectedRows: number;
+    insertId: number;
+    sqlMessage?: string;
+    sql?: string;
 }

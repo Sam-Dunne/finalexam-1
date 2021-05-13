@@ -38,7 +38,7 @@ const Edit = (props: EditProps) => {
 		e.preventDefault();
 		apiService(`/api/books/${id}`, 'DELETE')
 			.then(serverRes =>
-				history.push(`/books`)
+				history.push(`/details/${id}`)
 			)
 	}
 

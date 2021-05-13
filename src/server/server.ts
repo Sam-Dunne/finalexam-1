@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as path from 'path';
 import routes from './routes';
-import {configurePassport} from './middlewares/passport-strategies';
+import { configurePassport } from './middlewares/passport-strategies';
 import * as morgan from 'morgan';
 
 const app = express();

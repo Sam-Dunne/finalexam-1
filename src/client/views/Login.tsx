@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import { apiService } from '../utils/api-services';
 
 /* HOOK REACT EXAMPLE */
 const Login = (props: LoginProps) => {
+    const history = useHistory();
 	const [email, setEmail] = useState<string>('');
     const handleSetEmail = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)
 	const [password, setPassword] = useState<string>('');
@@ -17,7 +19,8 @@ const Login = (props: LoginProps) => {
 
         apiService('/auth/login/', 'POST', {email, password})
         .then(serverRes => {
-            localStorage.setItem('token', serverRes)
+            localStorage.setItem('token', serverRes);
+            history.push('/books')
         })
     }
 

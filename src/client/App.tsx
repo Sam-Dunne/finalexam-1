@@ -35,9 +35,9 @@ const App = (props: AppProps) => {
 				<Route exact path='/register'>
 					<Register />
 				</Route>
-				<Route exact path='/create'>
+				<PrivateRoute exact path='/create'>
 					<CreateBook />
-				</Route>
+				</PrivateRoute>
 			</Switch>
 		</BrowserRouter>
 	);
